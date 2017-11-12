@@ -1,11 +1,15 @@
-/* Custom Stylesheet */
-/**
- *
- * Made By Joash Pereira
- * Thanks for MaterializeCSS.com
- */
 
-.default_color{background-color: #2196F3 !important}
+  #video-background {
+    position: fixed;
+    right: 0; 
+    bottom: 0;
+    width: 500px; 
+    height: 500px;
+    z-index: -100;
+  }
+
+ 
+ .default_color{background-color: #2196F3 !important}
 
 .default_color_text{color: #2196F3 !important}
 
