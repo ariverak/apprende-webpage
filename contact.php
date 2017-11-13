@@ -2,22 +2,15 @@
 
 if(isset($_POST['email'])) {
 
-    $email_to = "YOUR EMAIL ID GOES HERE";
+    $email_to = "ipeters@apprende.cl";
  
-    $email_subject = "Website Contact";
+    $email_subject = "desde apprende.cl";
 
  
     function died($error) {
+  
  
-        // your error code can go here
- 
-        echo "We are very sorry, but there were error(s) found with the form you submitted. ";
- 
-        echo "These errors appear below.<br /><br />";
- 
-        echo $error."<br /><br />";
- 
-        echo "Please go back and fix these errors.<br /><br />";
+        echo $error."<br /><br />"; 
  
         die();
  
@@ -33,7 +26,7 @@ if(isset($_POST['email'])) {
  
         !isset($_POST['message'])) {
  
-        died('We are sorry, but there appears to be a problem with the form you submitted.');       
+        died('Lo sentimos, hemos tenido un error al enviar su consulta');       
  
     }
  
@@ -43,19 +36,14 @@ if(isset($_POST['email'])) {
     $message = $_POST['message'];
  
  
-    $email_message = "Form details below.\n\n";
+    $email_message = "El siguente detalle de informacion \n\n";
  
      
  
-    function clean_string($string) {
- 
+    function clean_string($string) { 
       $bad = array("content-type","bcc:","to:","cc:","href");
- 
       return str_replace($bad,"",$string);
- 
-    }
- 
-     
+    } 
  
     $email_message .= "Name: ".clean_string($name)."\n";
  
@@ -73,22 +61,7 @@ if(isset($_POST['email'])) {
 	'X-Mailer: PHP/' . phpversion();
 	 
 	@mail($email_to, $email_subject, $email_message, $headers);  
-
-
-?>
- 
- 
- 
-<!-- include your own success html here -->
- 
- 
- 
-Thank you for contacting me. Will be in touch with you very soon.
- 
- 
- 
-<?php
- 
+    header("Location: index.html");
 }
  
 ?>
