@@ -23,11 +23,13 @@
     position: absolute;
     width: 50%;
     z-index: 200;
+    opacity: 0.9;
 }
 @media (min-width: 480px){
     #logo{
         position: absolute;
         width: 30%;
+        opacity: 0.9;
         z-index: 200;
     }
 }
